@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[context.deploy-preview]
+  command = "npm run build-preview"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

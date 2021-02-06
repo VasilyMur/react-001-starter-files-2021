@@ -1,0 +1,10 @@
+{
+  "rules": {
+    ".write": "!data.exists()",
+    ".read": true,
+    "$state": {
+      ".write": "auth != null",
+      ".read": true
+    }
+  }
+}

@@ -1,0 +1,330 @@
+// Import all partials
+@require './_*.styl'
+
+header.top
+  background url('images/burger-logo-4.jpg') center no-repeat
+  background-size: cover
+  color: #fff
+  .wrap
+    height: 100%;
+    background-image: linear-gradient(to bottom,
+    rgba(61, 26, 22, 0), rgba(61, 26, 22, 0.6));
+  .header-content
+    padding: 4rem 0
+    margin: 0 4rem;
+    .header-rating
+      padding: 4px 8px
+      background-color: #ffe033
+      display: inline-flex
+      border-radius: 18px
+      align-items: center
+      font-size: 1.4rem
+      .header-rating_tag
+        color: #000
+        margin-right: 5px;
+    .header-divider
+      height: 1px
+      opacity: 0.2
+      margin-top: 20px
+      margin-bottom: 8px
+      background-color: #ffffff
+    h1
+      font-size 3.4rem
+    h3
+      margin 0
+      font-size 2rem
+    .sub-header
+      color: #FF0000
+
+.burger-paradise
+  display grid
+  grid-template-columns: 2fr 1fr 1.5fr;
+  grid-gap: 10px;
+  height 94vh
+  max-width:1500px
+  margin 0 auto
+  margin-top 2vh
+  & > *
+    overflow-y scroll
+    overflow-x hidden
+    border: solid 1px #eeeeee
+    &:first-child
+      background #ededed
+    &:nth-child(2)
+      padding 2rem 0
+      overflow-y hidden
+      background #f2f2f2
+      border-radius: 4px;
+    &:last-child
+      background #ededed
+      padding 2rem
+
+ul
+  list-style none
+  margin 0
+  padding 2rem
+
+ul.order
+  // Детали Заказа
+  li
+    border-bottom 1px solid black
+    padding 2rem 0 2rem 0.2rem
+    display flex
+    font-size 1.4rem
+    justify-content space-between
+    align-items center
+    button
+      border: 0
+      display: inline
+      line-height: 1
+      padding: 0 4px
+      background: transparent
+      color: #FF0000
+      &:after
+        display: none
+
+    span.count
+      position relative
+      overflow hidden
+      float left // only works if it's floated?!
+      span
+        display inline-block
+.nothingSelected     
+  text-align: center
+  margin: 0 10px;
+
+.total
+  font-family: 'Source Sans Pro', sans-serif
+  font-weight: 600
+  border-bottom 3px solid black
+  border-top 3px double black
+  &_wrap
+    padding: 1rem 2rem
+    &-free {
+      font-size: 1.2rem
+    }
+    &-final
+      margin-top: 10px
+    &-cheap 
+      font-weight 300
+.unavailable
+  background #f8d0d2
+.price
+  font-size 1.2rem
+
+.order-title
+  text-align center
+
+.burger-edit
+  margin-bottom 20px
+  border 2px solid black
+  overflow hidden
+  display flex
+  flex-wrap wrap
+  max-width: 450px;
+  input, textarea, select
+    width 50%
+    padding 10px
+    line-height 1
+    font-size 1.2rem
+    border 0
+    border-bottom 1px solid black
+    border-right 1px solid black
+    appearance none
+    border-radius 0
+    background white
+    &:focus
+      outline 0
+      background lighten(orange, 85%)
+  textarea
+    width 100%
+    min-height 60px
+  input:last-of-type
+    width 100%
+  button
+    width 100%
+    border 0
+    font-size 1.2rem
+  .status
+    width: 100%
+
+// Menu Styles
+.menu-burger
+  display: grid
+  grid-template-columns: 150px 1fr
+  gap: 10px;
+  margin-bottom: 10px
+  overflow: hidden
+  background: #fff
+  padding: 2rem
+  border-radius: 4px
+  p
+    margin 5px 0
+    font-size 1.6rem
+  .burger-name
+    margin 0
+    display flex
+    justify-content space-between
+    align-items center
+  .price
+    font-size 1.4rem
+    justify-content flex-end
+    font-family 'Open Sans', sans-serif
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+.buttonOrder
+  transform: skew(-2deg)
+button, input[type=submit]
+  text-transform uppercase
+  padding: 0.8rem 1.5rem
+  border none
+  background: #FF0000
+  color: #fff
+  font-size 1.4rem
+  font-family: 'Source Sans Pro', sans-serif
+  font-weight 600
+  transition all 0.2s
+  position relative
+  z-index 2
+  &[disabled]
+    color #d12028
+    background white
+    transform rotate(-10deg) scale(1.5) translateX(40%) translateY(-50%)
+    border: 1px solid #d12028
+    &:hover
+      color #d12028
+      cursor not-allowed
+    &:after
+      display none
+  &:after
+    content ''
+    z-index -1
+    display block
+    background black
+    position absolute
+    width 0
+    height 100%
+    left 0
+    top 0
+    transition all 0.2s
+  &:hover, &:focus
+    color white
+    outline 0
+    &:after
+      width 100%
+  // variants
+  &.warning
+    &:after
+      background #d12028
+  &.success
+    &:after
+      background green
+  &.github
+    border 0
+    display block
+    margin-bottom 2rem
+    width 100%
+    color white
+    padding 2rem
+    border: 5px solid white
+    font-size: 1.6rem;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05)
+
+.login-container
+  max-width: 400px;
+  margin: 200px auto 0;
+.login-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  .avatar { 
+    display: inline-block;	/* circle wraps image */
+    margin: 5px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 50%;	/* relative value */
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+    transition: linear 0.25s;
+    height: 50px;
+    width: 50px;
+    img {
+      border-radius: 50%;
+      max-width:100%;
+      max-height:100%;
+    }
+  }
+  button {
+    // display: block;
+    // margin: 0 0 20px auto;
+  }
+}
+
+// Landing: Restaurant Selector
+.restaurant_select
+  background: #fff
+  max-width: 460px
+  margin: 200px auto
+  padding: 40px
+  position: relative
+  box-shadow: 0 0 0 10px rgba(255,255,255,0.1), 0 0 10px rgba(0,0,0,0.18)
+  &_top
+    position: relative
+    max-width: 380px
+    display: flex
+    justify-content: space-between
+  &_top-header
+    font-size: 2.4rem
+    text-transform: uppercase
+    margin: 0
+    line-height: 1.4
+    cursor: pointer
+  button
+    margin-top: 10px
+  .arrow_picker
+    display: inline-block
+    vertical-align: middle
+    position: absolute
+    top: 0
+    right: 0
+    height: 100%
+    padding-top: 2px
+    width: 14px
+    &-up
+      background: url(images/up.svg) no-repeat
+      background-size: auto
+      background-size: 100% auto
+      width: 13px
+      height: 12px
+      top: 0
+      cursor: pointer
+      margin-bottom: 5px
+    &-down
+      background: url(images/down.svg) no-repeat
+      background-size: auto
+      background-size: 100% auto
+      width: 13px
+      height: 12px
+      cursor: pointer
+  &_bottom
+    position: absolute
+    padding: 10px 20px
+    border: 2px solid#000
+    top: 85px
+    left: 40px
+    min-width: 350px
+    background: #fff
+    & ul
+      padding: 0 0 0 10px
+    & ul li
+      cursor: pointer
+      list-style: none
+      padding: 5px 0
+    & ul li::before
+      content: '■'
+      margin-right: 0.5rem
+      color: #FF0000
+
+
+
